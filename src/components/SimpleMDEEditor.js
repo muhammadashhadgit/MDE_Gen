@@ -209,7 +209,8 @@ const RichTextEditor = () => {
       tabSize: 4,
       toolbarTips: true,
       previewRender: (plainText) => {
-        const lines = plainText.split("\n");
+        const processedText = plainText.replace(/^(#{1,6})(\S)/gm, "$1 $2");
+        const lines = processedText.split("\n");
 
         let result = "";
         let inHighlightGroup = false;
@@ -257,7 +258,7 @@ const RichTextEditor = () => {
 
         cm.removeLineClass(i, "background", "highlighted-line");
 
-        if (/^(#{1,6} |->\s)/.test(lineText.trim())) {
+        if (/^(#{1,6})(\s|\S)/.test(lineText.trim())) {
           cm.addLineClass(i, "background", "highlighted-line");
         }
       }

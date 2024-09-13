@@ -183,6 +183,7 @@ textarea#editor {
   background-color: #5a6268;
 }
 
+/* Custom Styles */
 .cm-highlight {
   background-color: yellowgreen;
   color: black;
@@ -217,7 +218,17 @@ mark {
 }
 
 .highlighted-line {
-  background-color: yellowgreen; /* Same green background as preview */
-  color: black; /* Keep the text color black */
-  font-weight: bold; /* Apply bold font */
+  background-color: yellowgreen;
+  color: black;
+  font-weight: bold;
+}
+
+.editor-container h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.editor-container h1 {
+  font-size: 2em;
+  font-weight: bold;
 }
